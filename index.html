@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>靜水美學 SereneSPA｜台中按摩｜做臉｜芳療｜撥筋｜耳燭｜刮痧｜完全預約制</title>
+<meta name="description" content="（樣品頁）台中西屯區靜水美學SereneSPA，提供專業按摩、做臉、芳療、撥筋、耳燭、刮痧等服務。"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Zen+Old+Mincho:wght@400;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'blue-deep': '#0a1628',
+        'blue-mid': '#1a2d4e',
+        'blue-soft': '#2c4a7c',
+        'blue-mist': '#4a6fa1',
+        'blue-pale': '#8ba7cc',
+        'blue-light': '#c5d5e8',
+        'blue-frost': '#e8f0f8',
+        'gold': '#c9a96e',
+        'gold-light': '#e8d5b0',
+        'gold-dim': '#a07840',
+        'cream': '#faf7f2',
+        'warm-white': '#f8f5f0',
+      },
+      fontFamily: {
+        serif: ['"Noto Serif TC"', 'serif'],
+        display: ['"Cormorant Garamond"', 'serif'],
+        zen: ['"Zen Old Mincho"', 'serif'],
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  :root {
+    --blue-deep: #0a1628;
+    --blue-mid: #1a2d4e;
+    --blue-soft: #2c4a7c;
+    --blue-mist: #4a6fa1;
+    --blue-pale: #8ba7cc;
+    --blue-light: #c5d5e8;
+    --blue-frost: #e8f0f8;
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --gold-dim: #a07840;
+    --cream: #faf7f2;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Serif TC', serif; background: var(--cream); color: var(--blue-deep); overflow-x: hidden; }
+
+  .glass-nav {
+    background: rgba(10, 22, 40, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  }
+
+  .page { display: none; }
+  .page.active { display: block; animation: pageFadeIn .5s ease; }
+  @keyframes pageFadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+  .nav-link { position: relative; transition: color .25s; letter-spacing: .08em; font-size: .82rem; }
+  .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s ease; }
+  .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+  .nav-link.active { color: var(--gold); }
+
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+
+  .hero-section {
+    min-height: 100vh;
+    background: linear-gradient(165deg, var(--blue-deep) 0%, #0d1f3a 40%, #1a3055 70%, #0a1a30 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&auto=format&fit=crop&q=60') center/cover no-repeat;
+    opacity: 0.18;
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 60% 50%, rgba(74,111,161,0.15) 0%, transparent 65%),
+                linear-gradient(to bottom, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.7) 100%);
+  }
+  .hero-content { position: relative; z-index: 10; }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: float 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes float { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.05); } }
+
+  .gold-line { width: 48px; height: 1px; background: var(--gold); display: inline-block; }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  .service-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f8fc 100%);
+    border: 1px solid rgba(139, 167, 204, 0.2);
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-soft), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(26,45,78,.12); border-color: rgba(139,167,204,.4); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .price-tag { color: var(--blue-soft); font-size: 1.25rem; font-weight: 700; }
+  .price-unit { color: var(--blue-mist); font-size: .8rem; }
+
+  .review-card {
+    background: white;
+    border: 1px solid rgba(197,213,232,.4);
+    border-radius: 16px;
+    transition: all .3s ease;
+  }
+  .review-card:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(26,45,78,.08); }
+
+  .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--gold); letter-spacing: .15em; }
+  .section-title { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--blue-deep); line-height: 1.3; font-weight: 600; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-mid) 100%);
+    color: white; padding: .75rem 2rem; border-radius: 4px; font-weight: 600;
+    letter-spacing: .05em; font-size: .9rem; transition: all .3s ease; border: none;
+    cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(44,74,124,.35); }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dim) 100%);
+    color: white; padding: .75rem 2rem; border-radius: 4px; font-weight: 600;
+    letter-spacing: .05em; font-size: .9rem; transition: all .3s ease; border: none;
+    cursor: pointer; display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(160,120,64,.35); }
+
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,.5); color: white; padding: .75rem 2rem; border-radius: 4px;
+    font-weight: 500; letter-spacing: .05em; font-size: .9rem; transition: all .3s ease;
+    background: rgba(255,255,255,.06); display: inline-flex; align-items: center; gap: .5rem;
+    text-decoration: none; cursor: pointer;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.8); }
+
+  .cred-badge {
+    display: inline-flex; align-items: center; gap: 8px; background: white;
+    border: 1px solid rgba(197,213,232,.6); padding: .5rem 1.1rem; border-radius: 999px;
+    font-size: .78rem; color: var(--blue-mid); font-weight: 600; box-shadow: 0 2px 12px rgba(26,45,78,.06);
+  }
+  .cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  .about-img-ring { border: 2px solid rgba(201,169,110,.3); border-radius: 2px; padding: 6px; }
+  .booking-section { background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-mid) 100%); }
+
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+  .faq-answer.open { max-height: 300px; }
+  .faq-icon { transition: transform .3s ease; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+  .map-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--blue-mist); font-size: .85rem; transition: color .2s;
+  }
+  .map-link:hover { color: var(--gold); }
+
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; line-height: 1; color: var(--blue-deep); }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--blue-frost); }
+  ::-webkit-scrollbar-thumb { background: var(--blue-pale); border-radius: 999px; }
+
+  .img-zoom { overflow: hidden; }
+  .img-zoom img { transition: transform .7s ease; width: 100%; height: 100%; object-fit: cover; }
+  .img-zoom:hover img { transform: scale(1.06); }
+
+  img { background: var(--blue-frost); }
+
+  .float-bar {
+    background: rgba(10,22,40,.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(201,169,110,.25);
+  }
+
+  .cert-icon-bg {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-frost) 0%, var(--blue-light) 100%);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .line-pattern {
+    background-image: repeating-linear-gradient(
+      90deg, rgba(139,167,204,0.06) 0px, rgba(139,167,204,0.06) 1px,
+      transparent 1px, transparent 60px
+    );
+  }
+</style>
+</head>
+<body>
+
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<nav class="fixed top-0 w-full z-50 glass-nav" role="navigation" aria-label="主要導覽">
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+    <button onclick="showPage('home')" class="flex flex-col leading-none group" aria-label="回到首頁">
+      <span class="font-display italic text-2xl text-gold tracking-widest group-hover:opacity-80 transition-opacity" style="color:var(--gold)">Serene<span style="color:rgba(197,213,232,.8)">SPA</span></span>
+      <span class="font-serif text-xs tracking-[.3em] mt-0.5" style="color:rgba(197,213,232,.6)">靜水美學</span>
+    </button>
+
+    <div class="hidden md:flex gap-8 items-center">
+      <button onclick="showPage('home')" class="nav-link hover:text-white" data-page="home" style="color:rgba(197,213,232,.8)">首頁</button>
+      <button onclick="showPage('services')" class="nav-link hover:text-white" data-page="services" style="color:rgba(197,213,232,.8)">療程項目</button>
+      <button onclick="showPage('about')" class="nav-link hover:text-white" data-page="about" style="color:rgba(197,213,232,.8)">關於我們</button>
+      <button onclick="showPage('reviews')" class="nav-link hover:text-white" data-page="reviews" style="color:rgba(197,213,232,.8)">顧客回饋</button>
+      <button onclick="showPage('booking')" class="nav-link hover:text-white" data-page="booking" style="color:rgba(197,213,232,.8)">預約資訊</button>
+      <span class="flex items-center gap-1.5 px-4 py-2 rounded text-white text-xs font-semibold tracking-wider opacity-60 cursor-default"
+         style="background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+        Instagram
+      </span>
+      <span class="flex items-center gap-1.5 btn-gold text-sm opacity-60 cursor-default" style="padding:.5rem 1.2rem; border-radius:4px;">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE 預約
+      </span>
+    </div>
+
+    <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="開啟選單" aria-expanded="false">
+      <span class="block w-6 h-0.5 transition-all duration-300" id="bar1" style="background:rgba(197,213,232,.8)"></span>
+      <span class="block w-6 h-0.5 transition-all duration-300" id="bar2" style="background:rgba(197,213,232,.8)"></span>
+      <span class="block w-6 h-0.5 transition-all duration-300" id="bar3" style="background:rgba(197,213,232,.8)"></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden flex-col px-6 pb-5 gap-0 border-t" style="border-color:rgba(201,169,110,.15)" role="menu">
+    <button onclick="showPage('home');closeMobileMenu()" class="block py-3.5 text-left font-medium w-full border-b text-sm tracking-wider" style="color:rgba(197,213,232,.85);border-color:rgba(197,213,232,.1)">首頁</button>
+    <button onclick="showPage('services');closeMobileMenu()" class="block py-3.5 text-left font-medium w-full border-b text-sm tracking-wider" style="color:rgba(197,213,232,.85);border-color:rgba(197,213,232,.1)">療程項目</button>
+    <button onclick="showPage('about');closeMobileMenu()" class="block py-3.5 text-left font-medium w-full border-b text-sm tracking-wider" style="color:rgba(197,213,232,.85);border-color:rgba(197,213,232,.1)">關於我們</button>
+    <button onclick="showPage('reviews');closeMobileMenu()" class="block py-3.5 text-left font-medium w-full border-b text-sm tracking-wider" style="color:rgba(197,213,232,.85);border-color:rgba(197,213,232,.1)">顧客回饋</button>
+    <button onclick="showPage('booking');closeMobileMenu()" class="block py-3.5 text-left font-medium w-full border-b text-sm tracking-wider" style="color:rgba(197,213,232,.85);border-color:rgba(197,213,232,.1)">預約資訊</button>
+    <div class="flex gap-3 pt-4">
+      <span class="btn-gold flex-1 justify-center text-sm opacity-60 cursor-default" style="padding:.6rem 1rem; border-radius:4px; display:inline-flex; align-items:center; gap:.4rem;"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE 預約</span>
+      <span class="flex-1 flex items-center justify-center gap-1.5 text-white text-sm font-semibold rounded opacity-60 cursor-default" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);padding:.6rem 1rem;">IG 追蹤</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ PAGE: HOME ══════════════════ -->
+<div id="page-home" class="page active">
+  <main>
+  <!-- Hero -->
+  <section class="hero-section flex flex-col justify-center" style="padding-top:108px;">
+    <div class="orb" style="width:400px;height:400px;background:rgba(44,74,124,.25);top:-100px;right:-80px;animation-duration:10s;" aria-hidden="true"></div>
+    <div class="orb" style="width:300px;height:300px;background:rgba(201,169,110,.08);bottom:100px;left:-60px;animation-duration:7s;animation-delay:2s;" aria-hidden="true"></div>
+
+    <div class="hero-content max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="section-eyebrow mb-4 tracking-[.25em]">Taichung · Xitun</p>
+        <h1 class="font-serif text-5xl md:text-6xl font-light leading-tight mb-3" style="color:white;">
+          靜水美學
+          <span class="block text-4xl md:text-5xl font-display italic font-normal" style="color:var(--gold);">Serene SPA</span>
+        </h1>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="gold-line"></div>
+          <p class="text-sm tracking-[.2em]" style="color:rgba(197,213,232,.7)">讓靜水滋養你的靈魂</p>
+          <div class="gold-line"></div>
+        </div>
+        <p class="font-serif text-lg font-light leading-relaxed mb-8" style="color:rgba(248,245,240,.8);max-width:480px;">
+          最細膩的療癒工作室，座落台中西屯。提供按摩、做臉、芳療、撥筋、耳燭、刮痧等全方位身心療癒服務。完全預約制，給你最專注的呵護。
+        </p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="cred-badge" style="background:rgba(255,255,255,.08);border-color:rgba(201,169,110,.3);color:rgba(232,213,176,.9);">
+            <span class="cred-dot"></span>國家乙/丙級美容師
+          </span>
+          <span class="cred-badge" style="background:rgba(255,255,255,.08);border-color:rgba(201,169,110,.3);color:rgba(232,213,176,.9);">
+            <span class="cred-dot"></span>國際芳療認證
+          </span>
+          <span class="cred-badge" style="background:rgba(255,255,255,.08);border-color:rgba(201,169,110,.3);color:rgba(232,213,176,.9);">
+            <span class="cred-dot"></span>完全預約制
+          </span>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <span class="btn-gold opacity-70 cursor-default"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE 立即預約（樣品）</span>
+          <button onclick="showPage('services')" class="btn-outline">探索療程項目</button>
+        </div>
+      </div>
+
+      <div class="hidden md:grid grid-cols-2 gap-3 relative">
+        <div class="img-zoom rounded-sm row-span-2" style="height:380px;">
+          <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&auto=format&fit=crop&q=80"
+               alt="靜水美學SereneSPA按摩療程環境" width="300" height="380" loading="eager"/>
+        </div>
+        <div class="img-zoom rounded-sm" style="height:183px;">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&auto=format&fit=crop&q=80"
+               alt="精油芳療按摩" width="200" height="183" loading="eager"/>
+        </div>
+        <div class="img-zoom rounded-sm" style="height:183px;">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&auto=format&fit=crop&q=80"
+               alt="臉部保養護理" width="200" height="183" loading="eager"/>
+        </div>
+        <div class="absolute -bottom-4 -right-4 w-24 h-24 border border-gold rounded-sm opacity-30 pointer-events-none" style="border-color:var(--gold);" aria-hidden="true"></div>
+        <div class="absolute -top-4 -left-4 w-16 h-16 border rounded-sm opacity-25 pointer-events-none" style="border-color:var(--blue-mist);" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <div class="hero-content flex justify-center pb-8 relative z-10" aria-hidden="true">
+      <div class="flex flex-col items-center gap-2" style="color:rgba(197,213,232,.4)">
+        <span class="text-xs tracking-[.3em]">SCROLL</span>
+        <div class="w-px h-8" style="background:linear-gradient(to bottom, rgba(197,213,232,.4), transparent)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="py-12 line-pattern" style="background:#f8f5f0;border-top:1px solid rgba(197,213,232,.3);border-bottom:1px solid rgba(197,213,232,.3);">
+    <div class="max-w-4xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="stat-number">8+</div>
+        <p class="text-xs tracking-[.2em] mt-1 font-semibold" style="color:var(--blue-mist)">年執業經驗</p>
+      </div>
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="stat-number">3</div>
+        <p class="text-xs tracking-[.2em] mt-1 font-semibold" style="color:var(--blue-mist)">國際認證</p>
+      </div>
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="stat-number">7</div>
+        <p class="text-xs tracking-[.2em] mt-1 font-semibold" style="color:var(--blue-mist)">核心服務項目</p>
+      </div>
+      <div class="reveal" style="transition-delay:.3s">
+        <div class="stat-number">100%</div>
+        <p class="text-xs tracking-[.2em] mt-1 font-semibold" style="color:var(--blue-mist)">預約制專屬服務</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="section-eyebrow mb-3">Our Services</p>
+      <h2 class="section-title mb-4">療程項目</h2>
+      <p class="text-sm tracking-wider" style="color:var(--blue-mist)">為每位客人量身打造最適合的療癒課程</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="service-card rounded-sm p-7 reveal">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.514M12 4.5v.01M12 19.5v.01M4.875 7.427l.513 1.41M18.6 15.15l.514 1.41M7.05 18.6l-1.41.513M16.95 5.4l-1.41.514"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">精油芳療 SPA</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">運用天然植物精油，透過溫柔手技喚醒身體自癒能力，深層放鬆身心靈，適合壓力大、長期疲勞者。</p>
+      </article>
+      <article class="service-card rounded-sm p-7 reveal" style="transition-delay:.1s">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">臉部護理 做臉</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">專業臉部清潔、清粉刺、保濕護理，配合多年美容師經驗，依膚況量身打造最適合你的護膚計畫。</p>
+      </article>
+      <article class="service-card rounded-sm p-7 reveal" style="transition-delay:.2s">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">耳燭療法</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">透過耳燭的溫熱與負壓原理，促進耳道循環，有效舒緩耳鳴、頭痛，讓心靈隨著啵啵聲完全放鬆。</p>
+      </article>
+      <article class="service-card rounded-sm p-7 reveal" style="transition-delay:.05s">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">撥筋療法</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">運用專業撥筋手技，深入筋膜與穴道，疏通氣結、促進氣血循環，解決長期肌肉緊繃與痠痛問題。</p>
+      </article>
+      <article class="service-card rounded-sm p-7 reveal" style="transition-delay:.15s">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 3.75H6A2.25 2.25 0 003.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0120.25 6v1.5m0 9V18A2.25 2.25 0 0118 20.25h-1.5m-9 0H6A2.25 2.25 0 013.75 18v-1.5"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">刮痧</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">傳統中式刮痧結合現代手法，促進血液循環、排除體內濕氣，刮後身體明顯輕鬆，是許多客人的最愛。</p>
+      </article>
+      <article class="service-card rounded-sm p-7 reveal" style="transition-delay:.25s">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center mb-4" style="background:var(--blue-frost)" aria-hidden="true">
+          <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        </div>
+        <h3 class="font-serif text-lg font-semibold mb-2" style="color:var(--blue-deep)">角蛋白美睫 / 除毛</h3>
+        <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">專業角蛋白美睫療程，兼顧美觀與睫毛健康。同時提供身體除毛服務，讓你全身上下都保持最完美的狀態。</p>
+      </article>
+    </div>
+    <div class="text-center mt-10">
+      <button onclick="showPage('services')" class="btn-primary">查看完整療程與收費</button>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="py-20 px-6" style="background:var(--blue-deep);">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <p class="section-eyebrow mb-3">About Serene</p>
+        <h2 class="font-serif text-3xl font-semibold mb-5" style="color:white;">最細膩的<span style="color:var(--gold)">芳療師</span>陳雅靜</h2>
+        <p class="font-serif font-light leading-relaxed mb-5" style="color:rgba(197,213,232,.8);">
+          陳雅靜持有國家乙級與丙級美容師執照，同時取得國際芳療認證，多年來深耕台中西屯，用芳療與雙手為每一位到訪的客人帶來身心靈的完整修復。
+        </p>
+        <p class="font-serif font-light leading-relaxed mb-8" style="color:rgba(197,213,232,.7);">
+          不只是一次服務，更像是量身打造的專屬保養計畫。在每個療程前仔細評估客人狀況，確保每次體驗都是最適合你的。
+        </p>
+        <button onclick="showPage('about')" class="btn-outline">了解更多關於我們</button>
+      </div>
+      <div class="grid grid-cols-2 gap-3 reveal" style="transition-delay:.2s">
+        <div class="img-zoom rounded-sm" style="height:200px;">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&auto=format&fit=crop&q=80"
+               alt="台中按摩芳療服務" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="img-zoom rounded-sm" style="height:200px;margin-top:32px;">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&auto=format&fit=crop&q=80"
+               alt="精油療程芳療" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="img-zoom rounded-sm" style="height:200px;margin-top:-32px;">
+          <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=400&auto=format&fit=crop&q=80"
+               alt="靜水美學SPA空間" width="200" height="200" loading="lazy"/>
+        </div>
+        <div class="img-zoom rounded-sm" style="height:200px;">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&auto=format&fit=crop&q=80"
+               alt="臉部護理做臉" width="200" height="200" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Teaser -->
+  <section class="py-20 px-6" style="background:var(--warm-white);">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <p class="section-eyebrow mb-3">Client Stories</p>
+        <h2 class="section-title">客人這樣說</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="review-card p-6 reveal">
+          <div class="flex items-center gap-1 mb-3" aria-label="五星評價" role="img">
+            ★★★★★
+          </div>
+          <blockquote class="text-sm leading-relaxed mb-4" style="color:var(--blue-mid);">"雅靜老師的專業度真的很讓人安心，從膚況評估到每個細節操作都非常細膩，更像是為每個人量身打造的專屬保養。"</blockquote>
+          <p class="text-xs font-semibold" style="color:var(--blue-mist)">Wang Mei · Google 在地嚮導</p>
+        </article>
+        <article class="review-card p-6 reveal" style="transition-delay:.1s">
+          <div class="flex items-center gap-1 mb-3" aria-label="五星評價" role="img">★★★★★</div>
+          <blockquote class="text-sm leading-relaxed mb-4" style="color:var(--blue-mid);">"Amazing experience! Professional and intuitive to what muscles need work. I would recommend Serene SPA to anyone looking for a great massage in Taichung."</blockquote>
+          <p class="text-xs font-semibold" style="color:var(--blue-mist)">James Lin · Google 評論</p>
+        </article>
+        <article class="review-card p-6 reveal" style="transition-delay:.2s">
+          <div class="flex items-center gap-1 mb-3" aria-label="五星評價" role="img">★★★★★</div>
+          <blockquote class="text-sm leading-relaxed mb-4" style="color:var(--blue-mid);">"隔了兩年終於有機會再次前來。按摩很舒服，每次來都能開心又放鬆，真的很值得推薦。"</blockquote>
+          <p class="text-xs font-semibold" style="color:var(--blue-mist)">林小姐 · Google 在地嚮導</p>
+        </article>
+      </div>
+      <div class="text-center mt-8">
+        <button onclick="showPage('reviews')" class="btn-primary">閱讀更多真實評價</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section class="booking-section py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <p class="section-eyebrow mb-3" style="color:var(--gold)">Appointment Only</p>
+      <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-4" style="color:white;">完全預約制</h2>
+      <p class="font-serif font-light leading-relaxed mb-8" style="color:rgba(197,213,232,.8)">
+        為了給每位客人最完整的專注與服務品質，靜水美學 SereneSPA 採完全預約制。歡迎透過 LINE 或 Instagram 私訊預約時間。
+      </p>
+      <p class="text-sm font-medium mb-2" style="color:rgba(197,213,232,.6)">地址：台中市西屯區台灣大道三段（近市政府捷運站）</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <span class="btn-gold opacity-70 cursor-default"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE 私訊預約（樣品）</span>
+        <span class="btn-outline opacity-70 cursor-default">Instagram 私訊（樣品）</span>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="py-10 px-6" style="background:var(--blue-deep);">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-8">
+      <div class="md:col-span-2">
+        <div class="font-display italic text-2xl mb-1" style="color:var(--gold)">SereneSPA <span class="not-italic font-serif text-base" style="color:rgba(197,213,232,.6)">靜水美學</span></div>
+        <p class="text-xs leading-relaxed mt-2" style="color:rgba(197,213,232,.5)">讓靜水滋養你的靈魂，最細膩的芳療工作室。<br/>
+        <address style="font-style:normal">台中市西屯區台灣大道三段（近市政府捷運站）</address></p>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-[.15em] mb-4" style="color:var(--gold)">療程服務</h4>
+        <ul class="space-y-2 text-xs" style="color:rgba(197,213,232,.5)">
+          <li>按摩 / 精油芳療 SPA</li>
+          <li>臉部護理 / 做臉</li>
+          <li>撥筋 / 刮痧</li>
+          <li>耳燭療法</li>
+          <li>角蛋白美睫 / 除毛</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-xs font-semibold tracking-[.15em] mb-4" style="color:var(--gold)">聯絡我們</h4>
+        <ul class="space-y-2 text-xs" style="color:rgba(197,213,232,.5)">
+          <li>LINE 預約（樣品）</li>
+          <li>Instagram（樣品）</li>
+          <li>Google Maps（樣品）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t pt-6 text-center text-xs" style="border-color:rgba(197,213,232,.1);color:rgba(197,213,232,.3)">
+      <p>© 2025 靜水美學 SereneSPA · 此為樣品展示，所有內容均為虛構 · 完全預約制 · 國家認證芳療美容</p>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ PAGE: SERVICES ══════════════════ -->
+<div id="page-services" class="page">
+  <div style="padding-top:80px;">
+    <div class="py-20 px-6 text-center" style="background:var(--blue-deep);">
+      <p class="section-eyebrow mb-3">Services & Pricing</p>
+      <h1 class="font-serif text-4xl font-semibold mb-3" style="color:white;">療程項目</h1>
+      <p class="text-sm tracking-wider" style="color:rgba(197,213,232,.6)">每項療程皆由治療師親自操作，為你量身規劃最適合的課程</p>
+    </div>
+
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+      <p class="text-xs text-center mb-12 tracking-widest" style="color:var(--blue-mist)">以下收費僅供參考，實際以預約時溝通為準，歡迎私訊詢問</p>
+
+      <div class="mb-16 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10" style="background:var(--gold)"></div>
+          <div>
+            <p class="text-xs tracking-[.2em] mb-1" style="color:var(--gold)">MASSAGE / SPA</p>
+            <h2 class="font-serif text-2xl font-semibold" style="color:var(--blue-deep)">精油按摩 · 芳療 SPA</h2>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">全身精油芳療 SPA</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">以天然有機植物精油為媒介，搭配流暢按摩手技，深層放鬆全身肌肉與神經系統，適合長期壓力累積者。</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">60 / 90 分鐘</span>
+              <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">天然精油</span>
+            </div>
+          </div>
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">局部按摩（肩頸 / 背部 / 腿部）</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">針對特定痠痛部位加強，力道依個人需求調整，精準解決你最不舒服的地方。</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">30 / 60 分鐘</span>
+              <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">客製力道</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10" style="background:var(--gold)"></div>
+          <div>
+            <p class="text-xs tracking-[.2em] mb-1" style="color:var(--gold)">FACIAL CARE</p>
+            <h2 class="font-serif text-2xl font-semibold" style="color:var(--blue-deep)">臉部護理 · 做臉</h2>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">基礎臉部保養 / 清粉刺</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">深層清潔毛孔，去除老廢角質，清粉刺過程溫柔不傷膚，結合治療師的膚況評估，為你的肌膚做最完整的清潔與修護。</p>
+          </div>
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">臉部保濕 / 亮白課程</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">針對缺水、暗沉、不均勻膚色設計的深層保濕亮白課程，讓肌膚重拾水潤光澤。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10" style="background:var(--gold)"></div>
+          <div>
+            <p class="text-xs tracking-[.2em] mb-1" style="color:var(--gold)">TRADITIONAL THERAPY</p>
+            <h2 class="font-serif text-2xl font-semibold" style="color:var(--blue-deep)">撥筋 · 刮痧</h2>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">專業撥筋療法</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">深入筋膜與穴道，疏通氣結，促進氣血循環。對長期肌肉緊繃、慢性痠痛、筋膜沾黏有顯著改善效果。</p>
+          </div>
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">傳統刮痧</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">透過刮痧促進皮下血液循環，排除體內濕氣與毒素，刮後身體明顯輕鬆，是許多回頭客指定的療程。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10" style="background:var(--gold)"></div>
+          <div>
+            <p class="text-xs tracking-[.2em] mb-1" style="color:var(--gold)">EAR CANDLING</p>
+            <h2 class="font-serif text-2xl font-semibold" style="color:var(--blue-deep)">耳燭療法</h2>
+          </div>
+        </div>
+        <div class="service-card p-6 rounded-sm">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">耳燭 Ear Candling</h3>
+            <span class="price-tag">詢價</span>
+          </div>
+          <p class="text-sm mb-3" style="color:var(--blue-mist)">透過天然蜂蠟耳燭的溫熱與負壓原理，舒緩耳道壓力，促進耳部血液循環。聆聽耳燭的啵啵聲，是許多客人最愛的放鬆體驗。適合有耳鳴、頭痛、壓力大的朋友。</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">舒緩耳鳴</span>
+            <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">頭部放鬆</span>
+            <span class="text-xs px-2 py-1 rounded" style="background:var(--blue-frost);color:var(--blue-mist)">天然蜂蠟</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-px h-10" style="background:var(--gold)"></div>
+          <div>
+            <p class="text-xs tracking-[.2em] mb-1" style="color:var(--gold)">BEAUTY</p>
+            <h2 class="font-serif text-2xl font-semibold" style="color:var(--blue-deep)">角蛋白美睫 · 除毛</h2>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">角蛋白美睫</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">以角蛋白護理睫毛，讓睫毛更健康濃密，呈現自然捲翹的效果，兼顧美觀與睫毛本身的養護。</p>
+          </div>
+          <div class="service-card p-6 rounded-sm">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">身體除毛</h3>
+              <span class="price-tag">詢價</span>
+            </div>
+            <p class="text-sm" style="color:var(--blue-mist)">專業身體除毛服務，使用安全溫和的方式，讓肌膚保持光滑細緻，歡迎諮詢詳細部位與方式。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-12 rounded-sm reveal" style="background:var(--blue-deep);">
+        <p class="font-serif text-xl font-light mb-3" style="color:white;">不確定哪個療程適合你？</p>
+        <p class="text-sm mb-6" style="color:rgba(197,213,232,.7)">歡迎透過 LINE 或 Instagram 私訊詢問，治療師會依照你的狀況給予最適合的建議。</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <span class="btn-gold opacity-70 cursor-default"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE 詢問 / 預約（樣品）</span>
+          <span class="btn-outline opacity-70 cursor-default">Instagram 私訊（樣品）</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 px-6 border-t" style="background:var(--blue-deep);border-color:rgba(197,213,232,.1);">
+      <div class="max-w-7xl mx-auto text-center text-xs" style="color:rgba(197,213,232,.3)">
+        <p>© 2025 靜水美學 SereneSPA · 此為樣品展示，所有內容均為虛構 · 台中市西屯區</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE: ABOUT ══════════════════ -->
+<div id="page-about" class="page">
+  <div style="padding-top:80px;">
+    <div class="py-20 px-6 text-center" style="background:var(--blue-deep);">
+      <p class="section-eyebrow mb-3">About Serene</p>
+      <h1 class="font-serif text-4xl font-semibold mb-3" style="color:white;">關於我們</h1>
+      <p class="text-sm italic" style="color:rgba(197,213,232,.6); font-family:'Cormorant Garamond', serif;">"讓靜水滋養你的靈魂，最細膩的芳療師"</p>
+    </div>
+
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-start mb-20">
+        <div class="reveal">
+          <div class="img-zoom rounded-sm about-img-ring" style="height:450px;">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=600&auto=format&fit=crop&q=80"
+                 alt="靜水美學SereneSPA芳療環境" width="500" height="450" loading="lazy"/>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay:.15s">
+          <p class="section-eyebrow mb-3">Beautician · Serene</p>
+          <h2 class="font-serif text-3xl font-semibold mb-4" style="color:var(--blue-deep)">陳雅靜的故事</h2>
+          <div class="w-8 h-px mb-6" style="background:var(--gold)"></div>
+          <p class="font-serif font-light leading-relaxed mb-5 text-base" style="color:var(--blue-mid)">
+            陳雅靜是台中西屯最受信賴的美容芳療師之一。持有國家乙級及丙級美容師執照，並取得國際芳療認證，這份認可代表著她對於芳療與美容的深度專業與嚴格要求。
+          </p>
+          <p class="font-serif font-light leading-relaxed mb-5" style="color:var(--blue-mist)">
+            在靜水美學 SereneSPA，每一位來訪的客人都會得到最完整的評估與關注。她相信，真正的療癒不只是身體上的放鬆，更是心靈的平靜與自我的和諧。
+          </p>
+          <p class="font-serif font-light leading-relaxed mb-8" style="color:var(--blue-mist)">
+            她擅長的服務包含精油芳療 SPA、臉部護理、撥筋、耳燭、刮痧與角蛋白美睫等，每一項都源自她對美與健康的熱情，以及多年實作累積的專業功底。
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="cert-icon-bg">
+                <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--blue-deep)">國家乙級美容師執照</p>
+                <p class="text-xs" style="color:var(--blue-mist)">台灣勞動部技術士認證</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="cert-icon-bg">
+                <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--blue-deep)">國家丙級美容師執照</p>
+                <p class="text-xs" style="color:var(--blue-mist)">台灣勞動部技術士認證</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="cert-icon-bg">
+                <svg class="w-5 h-5" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+              </div>
+              <div>
+                <p class="text-sm font-semibold" style="color:var(--blue-deep)">國際芳療認證</p>
+                <p class="text-xs" style="color:var(--blue-mist)">International Aromatherapy Certification</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <div class="text-center mb-10">
+          <p class="section-eyebrow mb-3">Our Philosophy</p>
+          <h2 class="section-title">靜水的理念</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-sm border-l-2" style="border-color:var(--gold);background:linear-gradient(135deg,white,var(--blue-frost));">
+            <h3 class="font-serif font-semibold mb-3" style="color:var(--blue-deep)">專注每一位客人</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">完全預約制讓治療師能把全部的心力放在每一位到訪的客人身上，不趕場、不分心，給你最高品質的療癒體驗。</p>
+          </div>
+          <div class="p-6 rounded-sm border-l-2" style="border-color:var(--blue-soft);background:linear-gradient(135deg,white,var(--blue-frost));">
+            <h3 class="font-serif font-semibold mb-3" style="color:var(--blue-deep)">天然有機的選擇</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">所有療程使用天然植物精油與有機保養品，讓你的肌膚與身體獲得最純粹、最安全的呵護。</p>
+          </div>
+          <div class="p-6 rounded-sm border-l-2" style="border-color:var(--gold-dim);background:linear-gradient(135deg,white,var(--blue-frost));">
+            <h3 class="font-serif font-semibold mb-3" style="color:var(--blue-deep)">量身打造的療程</h3>
+            <p class="text-sm leading-relaxed" style="color:var(--blue-mist)">每次療程前仔細了解你的狀況與需求，根據當天身體狀態靈活調整，確保每次的體驗都是最適合你的。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-10 rounded-sm text-center reveal" style="background:var(--blue-deep);">
+        <p class="section-eyebrow mb-3" style="color:var(--gold)">Find Us</p>
+        <h3 class="font-serif text-2xl font-semibold mb-4" style="color:white;">交通位置</h3>
+        <p class="text-sm mb-2" style="color:rgba(197,213,232,.8)">台中市西屯區台灣大道三段</p>
+        <p class="text-xs mb-6" style="color:rgba(197,213,232,.5)">近台中捷運綠線市政府站，交通便利</p>
+        <span class="btn-gold opacity-70 cursor-default">Google Maps 導覽（樣品）</span>
+      </div>
+    </section>
+
+    <footer class="py-10 px-6 border-t" style="background:var(--blue-deep);border-color:rgba(197,213,232,.1);">
+      <div class="max-w-7xl mx-auto text-center text-xs" style="color:rgba(197,213,232,.3)">
+        <p>© 2025 靜水美學 SereneSPA · 此為樣品展示，所有內容均為虛構</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE: REVIEWS ══════════════════ -->
+<div id="page-reviews" class="page">
+  <div style="padding-top:80px;">
+    <div class="py-20 px-6 text-center" style="background:var(--blue-deep);">
+      <p class="section-eyebrow mb-3">Client Reviews</p>
+      <h1 class="font-serif text-4xl font-semibold mb-3" style="color:white;">顧客真實評價</h1>
+      <div class="flex items-center justify-center gap-2 mt-3">
+        <span style="color:var(--gold);font-size:1.2rem">★★★★★</span>
+        <span class="text-sm font-semibold" style="color:rgba(197,213,232,.8)">5.0 · Google Reviews</span>
+      </div>
+    </div>
+
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="review-card p-7 reveal">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"一直以來我的臉部保養、耳燭、美睫到除毛，都是交給雅靜老師處理。她的專業度真的很讓人安心，從膚況評估到每個細節操作都非常細膩，能感受到她對品質的要求與經驗累積。不只是單純的服務，更像是為每個人量身打造的專屬保養。"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--blue-soft)">W</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">Wang Mei</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 在地嚮導 · 65 則評論</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card p-7 reveal" style="transition-delay:.1s">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"Amazing experience! Very professional and intuitive to what muscles need work. I would recommend Serene SPA to anyone looking for a great massage in Taichung. Thanks!"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--blue-mist)">J</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">James Lin</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 評論</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card p-7 reveal">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"耳燭逼逼啵啵的聲音很舒壓，按摩舒服到睡著。來了幾次，每次都很滿意。"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--gold-dim)">陳</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">陳小姐</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 評論 · 2 個月前</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card p-7 reveal" style="transition-delay:.1s">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"我來很多次，這裡的治療師服務非常好，而且收費合理環境乾淨，歡迎大家來。"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--blue-mid)">吳</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">吳美玲</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 評論 · 服務：身體除毛、按摩</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card p-7 reveal">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"精油按摩力道剛剛好，怕癢的人按的時候不會癢，按完非常放鬆，讚讚。"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--gold-dim)">許</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">許雅婷</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 評論 · 服務：按摩</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card p-7 reveal" style="transition-delay:.1s">
+          <div class="mb-3" style="color:var(--gold)">★★★★★</div>
+          <blockquote class="font-serif font-light text-base leading-relaxed mb-5" style="color:var(--blue-mid);">"隔了兩年終於有機會再次前來。老師美麗又親切，按摩很舒服，每次來都能開心又放鬆，真的很值得推薦。"</blockquote>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style="background:var(--gold)">林</div>
+            <div>
+              <p class="text-sm font-semibold" style="color:var(--blue-deep)">林小姐</p>
+              <p class="text-xs" style="color:var(--blue-mist)">Google 在地嚮導 · 服務：按摩</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="text-center mt-10">
+        <span class="btn-primary opacity-70 cursor-default">查看 Google 全部評論（樣品）</span>
+      </div>
+    </section>
+
+    <footer class="py-10 px-6 border-t" style="background:var(--blue-deep);border-color:rgba(197,213,232,.1);">
+      <div class="max-w-7xl mx-auto text-center text-xs" style="color:rgba(197,213,232,.3)">
+        <p>© 2025 靜水美學 SereneSPA · 此為樣品展示，所有內容均為虛構</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ══════════════════ PAGE: BOOKING ══════════════════ -->
+<div id="page-booking" class="page">
+  <div style="padding-top:80px;">
+    <div class="py-20 px-6 text-center" style="background:var(--blue-deep);">
+      <p class="section-eyebrow mb-3">Appointment</p>
+      <h1 class="font-serif text-4xl font-semibold mb-3" style="color:white;">預約資訊</h1>
+      <p class="text-sm" style="color:rgba(197,213,232,.6)">完全預約制 — 給你最專屬的療癒時光</p>
+    </div>
+
+    <section class="py-16 px-6 max-w-4xl mx-auto">
+      <div class="mb-16 reveal">
+        <p class="section-eyebrow mb-3">How to Book</p>
+        <h2 class="section-title mb-8">如何預約</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-8 rounded-sm border" style="background:white;border-color:rgba(197,213,232,.3)">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:#00b900;">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">LINE 預約</h3>
+                <p class="text-xs" style="color:var(--blue-mist)">推薦方式</p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-5" style="color:var(--blue-mist)">透過 LINE 私訊告知您希望的療程、日期及時間，治療師會盡快回覆確認。</p>
+            <span class="btn-gold w-full justify-center opacity-70 cursor-default" style="padding:.7rem;"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE 加入並預約（樣品）</span>
+          </div>
+          <div class="p-8 rounded-sm border" style="background:white;border-color:rgba(197,213,232,.3)">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif font-semibold" style="color:var(--blue-deep)">Instagram 私訊</h3>
+                <p class="text-xs" style="color:var(--blue-mist)">@serenespa_tc</p>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-5" style="color:var(--blue-mist)">追蹤 Instagram 並傳送私訊，同時可以看到最新的療程資訊與美麗作品分享。</p>
+            <span class="btn-primary w-full justify-center opacity-70 cursor-default" style="padding:.7rem;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);">Instagram 私訊（樣品）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-16 reveal">
+        <h2 class="font-serif text-xl font-semibold mb-6" style="color:var(--blue-deep)">預約注意事項</h2>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-5 rounded-sm" style="background:white;border:1px solid rgba(197,213,232,.3)">
+            <div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white mt-0.5" style="background:var(--blue-soft)">1</div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:var(--blue-deep)">完全預約制</p>
+              <p class="text-sm" style="color:var(--blue-mist)">本店採完全預約制，恕不接受現場候補，請事先透過 LINE 或 Instagram 預約時間。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 rounded-sm" style="background:white;border:1px solid rgba(197,213,232,.3)">
+            <div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white mt-0.5" style="background:var(--blue-soft)">2</div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:var(--blue-deep)">請準時到達</p>
+              <p class="text-sm" style="color:var(--blue-mist)">為確保完整的療程時間，請於預約時間前 5 分鐘抵達，若有延誤請提前告知。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 rounded-sm" style="background:white;border:1px solid rgba(197,213,232,.3)">
+            <div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white mt-0.5" style="background:var(--blue-soft)">3</div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:var(--blue-deep)">療程前諮詢</p>
+              <p class="text-sm" style="color:var(--blue-mist)">預約時請告知是否有過敏史、皮膚問題或特殊身體狀況，治療師會為你安排最適合的療程。</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-5 rounded-sm" style="background:white;border:1px solid rgba(197,213,232,.3)">
+            <div class="w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white mt-0.5" style="background:var(--blue-soft)">4</div>
+            <div>
+              <p class="font-semibold text-sm mb-1" style="color:var(--blue-deep)">取消與改期</p>
+              <p class="text-sm" style="color:var(--blue-mist)">如需取消或更改預約，請至少提前 24 小時告知，以便安排其他客人。感謝你的配合。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="reveal">
+          <h2 class="font-serif text-xl font-semibold mb-5" style="color:var(--blue-deep)">地址與交通</h2>
+          <div class="p-6 rounded-sm" style="background:white;border:1px solid rgba(197,213,232,.3)">
+            <div class="space-y-3 text-sm" style="color:var(--blue-mist)">
+              <div class="flex items-start gap-3">
+                <svg class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div>
+                  <p class="font-semibold" style="color:var(--blue-deep)">台中市西屯區台灣大道三段</p>
+                  <p class="text-xs mt-0.5">近市政府捷運站</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-4 h-4 mt-0.5 flex-shrink-0" style="color:var(--blue-soft)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                <div>
+                  <p class="font-semibold" style="color:var(--blue-deep)">捷運：綠線市政府站</p>
+                  <p class="text-xs mt-0.5">步行可達，交通便利</p>
+                </div>
+              </div>
+            </div>
+            <span class="map-link mt-5 block cursor-default opacity-60">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              在 Google Maps 查看導覽（樣品）
+            </span>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:.1s">
+          <h2 class="font-serif text-xl font-semibold mb-5" style="color:var(--blue-deep)">常見問題</h2>
+          <div class="space-y-2">
+            <div class="faq-item rounded-sm overflow-hidden" style="background:white;border:1px solid rgba(197,213,232,.3)">
+              <button class="faq-btn w-full flex items-center justify-between p-4 text-left" aria-expanded="false">
+                <span class="text-sm font-semibold" style="color:var(--blue-deep)">第一次來需要什麼準備？</span>
+                <span class="faq-icon text-xl leading-none" style="color:var(--blue-mist)">+</span>
+              </button>
+              <div class="faq-answer px-4">
+                <p class="text-sm pb-4" style="color:var(--blue-mist)">只需帶著自己來即可。預約時請告知你的身體狀況與過敏史，治療師會在療程前做完整諮詢，讓你安心放鬆。</p>
+              </div>
+            </div>
+            <div class="faq-item rounded-sm overflow-hidden" style="background:white;border:1px solid rgba(197,213,232,.3)">
+              <button class="faq-btn w-full flex items-center justify-between p-4 text-left" aria-expanded="false">
+                <span class="text-sm font-semibold" style="color:var(--blue-deep)">男性可以預約嗎？</span>
+                <span class="faq-icon text-xl leading-none" style="color:var(--blue-mist)">+</span>
+              </button>
+              <div class="faq-answer px-4">
+                <p class="text-sm pb-4" style="color:var(--blue-mist)">歡迎，部分服務如按摩、刮痧、耳燭等男女均可預約。請私訊詢問確認適合的療程項目。</p>
+              </div>
+            </div>
+            <div class="faq-item rounded-sm overflow-hidden" style="background:white;border:1px solid rgba(197,213,232,.3)">
+              <button class="faq-btn w-full flex items-center justify-between p-4 text-left" aria-expanded="false">
+                <span class="text-sm font-semibold" style="color:var(--blue-deep)">是否有停車位？</span>
+                <span class="faq-icon text-xl leading-none" style="color:var(--blue-mist)">+</span>
+              </button>
+              <div class="faq-answer px-4">
+                <p class="text-sm pb-4" style="color:var(--blue-mist)">鄰近台灣大道，附近有路邊停車格及停車場。也可搭乘捷運綠線至市政府站步行抵達，非常方便。</p>
+              </div>
+            </div>
+            <div class="faq-item rounded-sm overflow-hidden" style="background:white;border:1px solid rgba(197,213,232,.3)">
+              <button class="faq-btn w-full flex items-center justify-between p-4 text-left" aria-expanded="false">
+                <span class="text-sm font-semibold" style="color:var(--blue-deep)">可以帶朋友一起來嗎？</span>
+                <span class="faq-icon text-xl leading-none" style="color:var(--blue-mist)">+</span>
+              </button>
+              <div class="faq-answer px-4">
+                <p class="text-sm pb-4" style="color:var(--blue-mist)">可以，歡迎閨密、夫妻、朋友一起預約，請告知人數以便安排，雙人療程請各自預約時間。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-10 px-6 border-t" style="background:var(--blue-deep);border-color:rgba(197,213,232,.1);">
+      <div class="max-w-7xl mx-auto text-center text-xs" style="color:rgba(197,213,232,.3)">
+        <p>© 2025 靜水美學 SereneSPA · 此為樣品展示，所有內容均為虛構</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ══════════════════ MOBILE FLOAT BAR ══════════════════ -->
+<div class="md:hidden fixed bottom-4 left-4 right-4 z-50">
+  <div class="float-bar flex items-center justify-between px-5 py-3 rounded-full shadow-2xl">
+    <span class="text-xs font-semibold tracking-wider" style="color:rgba(197,213,232,.8)">預約療程</span>
+    <div class="flex gap-2">
+      <span class="flex items-center gap-1 px-3 py-1.5 rounded-full text-white text-xs font-bold opacity-70 cursor-default" style="background:#00b900"><svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg> LINE</span>
+      <span class="flex items-center gap-1 px-3 py-1.5 rounded-full text-white text-xs font-bold opacity-70 cursor-default" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)">IG</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const pages = ['home','services','about','reviews','booking'];
+
+function showPage(id) {
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updateNavActive(id);
+    setTimeout(() => initReveal(), 100);
+  }
+}
+
+function updateNavActive(pageId) {
+  document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+    link.classList.toggle('active', link.dataset.page === pageId);
+  });
+}
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const bar1 = document.getElementById('bar1'), bar2 = document.getElementById('bar2'), bar3 = document.getElementById('bar3');
+let menuOpen = false;
+
+hamburger.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  hamburger.setAttribute('aria-expanded', menuOpen);
+  if (menuOpen) {
+    mobileMenu.classList.add('open');
+    bar1.style.transform = 'translateY(8px) rotate(45deg)';
+    bar2.style.opacity = '0';
+    bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+  } else { closeMobileMenu(); }
+});
+
+function closeMobileMenu() {
+  menuOpen = false;
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.classList.remove('open');
+  bar1.style.transform = '';
+  bar2.style.opacity = '';
+  bar3.style.transform = '';
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.faq-btn');
+  if (!btn) return;
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-answer').classList.remove('open');
+    i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+});
+
+function initReveal() {
+  const reveals = document.querySelectorAll('.page.active .reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => observer.observe(el));
+}
+
+updateNavActive('home');
+setTimeout(() => initReveal(), 200);
+</script>
+</body>
+</html>
